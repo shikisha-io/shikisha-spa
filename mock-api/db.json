@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "firstName": "John",
+      "surname": "Smith",
+      "email": "foo@bar.com",
+      "dateOfBirth": "2020-03-31T23:00:00.000Z",
+      "id": 1
+    },
+    {
+      "firstName": "James",
+      "surname": "Poop",
+      "email": "poop@aol.com",
+      "dateOfBirth": "2020-03-12T00:00:00.000Z",
+      "id": 2
+    },
+    {
+      "firstName": "Sam",
+      "surname": "Gamba",
+      "email": "fafa@foofoo.com",
+      "dateOfBirth": "2020-03-01T00:00:00.000Z",
+      "id": 3
+    }
+  ]
+}
