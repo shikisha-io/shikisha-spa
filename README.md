@@ -1,4 +1,6 @@
 # shikisha-spa
+[![Build](https://github.com/shikisha-io/shikisha-spa/workflows/Build/badge.svg?branch=master)](https://github.com/shikisha-io/shikisha-spa/actions?query=workflow%3ABuild)
+
 This project was scaffolded using [chapi-chapi/generator-angular](https://github.com/chapi-chapi/generator-angular)
 
 The frontend single page application for the Shikisha app
