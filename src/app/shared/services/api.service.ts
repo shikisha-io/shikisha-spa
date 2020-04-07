@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
-import { IContact } from "../models/IContact";
+import { IProduct } from "../models/IProduct";
 import { Observable } from "rxjs";
 
 /** Service for handling all interactions with the API.
@@ -17,60 +17,55 @@ export class ApiService {
   constructor(private httpClient: HttpClient) {}
 
   private formateDate = (datetime: string) => new Date().toString();
-  private formatContact = (contact: IContact) => {
-    var updatedContact: IContact = {
-      ...contact,
-      dateOfBirth: this.formateDate(contact.dateOfBirth),
-      insertedUtc: new Date().toString(), //this.formateDate(contact.insertedUtc),
-      updatedUtc: new Date().toString() //this.formateDate(contact.updatedUtc)
-    };
-    return updatedContact;
+  private formatProduct = (product: IProduct) => {
+    var updatedProduct: IProduct = product;
+    return updatedProduct;
   };
 
-  /** Retrieves all contacts from the API.
-   * @returns {Observable<IContact[]>}
+  /** Retrieves all products from the API.
+   * @returns {Observable<IProduct[]>}
    * @memberof ApiService
    */
-  public getContacts(): Observable<IContact[]> {
+  public getProducts(): Observable<IProduct[]> {
     return this.httpClient
-      .get(`${this.apiBaseUrl}contacts`)
+      .get(`${this.apiBaseUrl}products`)
       .pipe(
         map((response: any[]) =>
-          response.map(contact => this.formatContact(contact))
+          response.map(product => this.formatProduct(product))
         )
       );
   }
 
-  /** Retrieves the contact information for the specified email.
+  /** Retrieves the product information for the specified email.
    * @param {string} email
-   * @returns {Observable<IContact>}
+   * @returns {Observable<IProduct>}
    * @memberof ApiService
    */
-  public getContact(email: string): Observable<IContact> {
+  public getProduct(email: string): Observable<IProduct> {
     return this.httpClient
-      .get(`${this.apiBaseUrl}contacts/${email}`)
-      .pipe(map((contact: IContact) => this.formatContact(contact)));
+      .get(`${this.apiBaseUrl}products/${email}`)
+      .pipe(map((product: IProduct) => this.formatProduct(product)));
   }
 
-  /** Creates a new contact via the API.
-   * @param {IContact} contact
-   * @returns {Observable<IContact>} The information for the newly created contact.
+  /** Creates a new product via the API.
+   * @param {IProduct} product
+   * @returns {Observable<IProduct>} The information for the newly created product.
    * @memberof ApiService
    */
-  public addContact(contact: IContact): Observable<IContact> {
+  public addProduct(product: IProduct): Observable<IProduct> {
     return this.httpClient
-      .post(`${this.apiBaseUrl}contacts`, contact)
-      .pipe(map((contact: IContact) => this.formatContact(contact)));
+      .post(`${this.apiBaseUrl}products`, product)
+      .pipe(map((product: IProduct) => this.formatProduct(product)));
   }
 
-  /** Updates the contact information via the API
-   * @param {IContact} contact
-   * @returns {Observable<IContact>} The information for the newly updated contact.
+  /** Updates the product information via the API
+   * @param {IProduct} product
+   * @returns {Observable<IProduct>} The information for the newly updated product.
    * @memberof ApiService
    */
-  public updateContact(contact: IContact): Observable<IContact> {
+  public updateProduct(product: IProduct): Observable<IProduct> {
     return this.httpClient
-      .put(`${this.apiBaseUrl}contacts/${contact.email}`, contact)
-      .pipe(map((contact: IContact) => this.formatContact(contact)));
+      .put(`${this.apiBaseUrl}products/${product.id}`, product)
+      .pipe(map((product: IProduct) => this.formatProduct(product)));
   }
 }

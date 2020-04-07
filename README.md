@@ -1,7 +1,11 @@
 # shikisha-spa
 This project was scaffolded using [chapi-chapi/generator-angular](https://github.com/chapi-chapi/generator-angular)
 
-The fontend single page application for the Shikisha app
+The frontend single page application for the Shikisha app
+
+Run locally with:
+
+```npm run start:proxy:mock:server```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 

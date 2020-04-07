@@ -1,0 +1,16 @@
+<h1>Product List</h1>
+
+<div fxLayout="row wrap" fxLayout.lt-md="column" fxLayoutGap="16px">
+  <app-product-card
+    fxFlex.gt-md="0 1 calc(25% - 16px)"
+    fxFlex.lt-lg="0 1 calc(50% - 16px)"
+    fxFlex.xs="calc(100% - 16px)"
+    *ngFor="let product of products$ | async"
+    [product]="product"
+    routerLink="/update-product/{{ product.email }}"
+  >
+  </app-product-card>
+</div>
+<p *ngIf="(products$ | async)?.length==0">
+  It's looking lonely in here... try <a routerLink="/add-product">adding a new product</a>
+</p>

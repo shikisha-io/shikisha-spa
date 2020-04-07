@@ -1,15 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ContactCardComponent } from './contact-card.component';
+import { ProductCardComponent } from './product-card.component';
 import { TimeagoModule, TimeagoFormatter, TimeagoClock } from 'ngx-timeago';
 
-describe('ContactCardComponent', () => {
-  let component: ContactCardComponent;
-  let fixture: ComponentFixture<ContactCardComponent>;
+describe('ProductCardComponent', () => {
+  let component: ProductCardComponent;
+  let fixture: ComponentFixture<ProductCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ContactCardComponent ],
+      declarations: [ ProductCardComponent ],
       providers: [TimeagoFormatter, TimeagoClock],
       imports: [TimeagoModule]
     })
@@ -17,7 +17,7 @@ describe('ContactCardComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactCardComponent);
+    fixture = TestBed.createComponent(ProductCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

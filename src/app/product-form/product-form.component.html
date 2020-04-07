@@ -1,0 +1,13 @@
+<form class="add-product-form" [formGroup]="productForm" (ngSubmit)="onSubmit(productForm.value)">
+  <mat-form-field appearance="fill">
+    <mat-label>Enter a name</mat-label>
+    <input matInput placeholder="New Product" [formControlName]="'name'" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Enter a description</mat-label>
+    <input matInput placeholder="A great new product that does lots of things" [formControlName]="'description'" required>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" color="primary" [disabled]="!productForm.valid">Submit</button>
+</form>

@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateContactComponent } from './update-contact.component';
+import { UpdateProductComponent } from './update-product.component';
 import { ApiService } from '../../shared/services/api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { NotificationsService } from '../../shared/services/notifications.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterTestingModule } from '@angular/router/testing';
 
-describe('UpdateContactComponent', () => {
-  let component: UpdateContactComponent;
-  let fixture: ComponentFixture<UpdateContactComponent>;
+describe('UpdateProductComponent', () => {
+  let component: UpdateProductComponent;
+  let fixture: ComponentFixture<UpdateProductComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UpdateContactComponent ],
+      declarations: [ UpdateProductComponent ],
       providers: [ApiService, NotificationsService],
       imports: [HttpClientModule, MatSnackBarModule, RouterTestingModule]
     })
@@ -21,7 +21,7 @@ describe('UpdateContactComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UpdateContactComponent);
+    fixture = TestBed.createComponent(UpdateProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

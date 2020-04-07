@@ -1,0 +1,25 @@
+<mat-card matRipple class="product-card" *ngIf="product">
+  <mat-card-header>
+    <div mat-card-avatar class="product-card-avatar-container">
+      <mat-icon
+        aria-hidden="false"
+        class="product-card-avatar"
+        aria-label="Product avatar"
+        >face</mat-icon
+      >
+    </div>
+    <mat-card-title
+      >{{ product.name }}</mat-card-title
+    >
+    <mat-card-subtitle>{{ product.id }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ product.description }}</p>
+    <!-- <div class="product-modified-info">
+      <strong>Created:</strong> {{ product.insertedUtc | timeago }}
+    </div>
+    <div class="product-modified-info">
+      <strong>Last updated:</strong> {{ product.updatedUtc | timeago}}
+    </div> -->
+  </mat-card-content>
+</mat-card>

@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ContactsComponent } from './contacts/contacts.component';
-import { AddContactComponent } from './pages/add-contact/add-contact.component';
-import { UpdateContactComponent } from './pages/update-contact/update-contact.component';
+import { ProductsComponent } from './products/products.component';
+import { AddProductComponent } from './pages/add-product/add-product.component';
+import { UpdateProductComponent } from './pages/update-product/update-product.component';
 
 
 const routes: Routes = [
   {
-    path: 'contacts',
-    component: ContactsComponent
+    path: 'products',
+    component: ProductsComponent
   },
   { path: '',
-    redirectTo: '/contacts',
+    redirectTo: '/products',
     pathMatch: 'full'
   },
   {
-    path: 'add-contact',
-    component: AddContactComponent
+    path: 'add-product',
+    component: AddProductComponent
   },
   {
-    path: 'update-contact/:email',
-    component: UpdateContactComponent
+    path: 'update-product/:id',
+    component: UpdateProductComponent
   }
 ];
 
