@@ -9,13 +9,13 @@ import { Observable } from 'rxjs';
 })
 export class ShikishaCardListComponent implements OnInit {
   @Input()
-  cards$: Observable<ICard[]>;
+  cards$!: Observable<ICard[]>;
 
   @Input()
-  addItemLink: string;
+  addItemLink!: string;
 
   @Input()
-  itemDetailsLink: string;
+  itemDetailsLink!: string;
 
   constructor() { }
 

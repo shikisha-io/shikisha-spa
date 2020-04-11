@@ -8,7 +8,7 @@ import { ICard } from './ICard';
 })
 export class ShikishaCardComponent implements OnInit {
   @Input()
-  card: ICard;
+  card!: ICard;
 
   constructor() { }
 
