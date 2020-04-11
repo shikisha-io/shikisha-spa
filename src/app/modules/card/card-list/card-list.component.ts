@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ICard } from '../card/ICard';
+import { ICard } from '../ICard';
 import { Observable } from 'rxjs';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ICard } from './ICard';
+import { ICard } from '../ICard';
 
 @Component({
   selector: 'shikisha-card',

@@ -3,7 +3,7 @@ import { ApiService } from '../../shared/services/api.service';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../shared/models/IProduct';
 import { Router } from '@angular/router';
-import { ICard } from '../../modules/card/card/ICard';
+import { ICard } from '../../modules/card/ICard';
 import { map } from 'rxjs/operators';
 
 @Component({
