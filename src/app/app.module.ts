@@ -34,12 +34,16 @@ import { LoadingService } from "./shared/services/loading.service";
 import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { ApiErrorInterceptor } from "./shared/interceptors/api-error.interceptor";
 import { NotificationsService } from "./shared/services/notifications.service";
-import { MockApiInterceptor } from "./shared/interceptors/mock-api.interceptor";
+import { MockApiModule } from "./shared/interceptors/mock-api/mock-api.module";
 import { ShikishaCardModule } from './modules/card/card.module';
+import { MockApiInterceptor } from './shared/interceptors/mock-api/mock-api.interceptor';
+import { IMockInterceptorData } from './shared/interceptors/mock-api/IMockInterceptorData';
+import { environment } from 'src/environments/environment';
 
-const urls = [
+const mockApi : IMockInterceptorData[] = [
   {
     url: "/api/products",
+    httpVerb: "GET",
     data: [
       {
         name: "Product A",
@@ -83,7 +87,8 @@ const urls = [
     MatSnackBarModule,
     MatProgressSpinnerModule,
     TimeagoModule.forRoot(),
-    ShikishaCardModule
+    ShikishaCardModule,
+    MockApiModule.forRoot(mockApi, environment.mock)
   ],
   providers: [
     LoadingService,
@@ -91,8 +96,8 @@ const urls = [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 4500 } },
     { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ApiErrorInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: MockApiInterceptor, multi: true },
-    { provide: "mockApiData", useValue: urls },
+    // { provide: HTTP_INTERCEPTORS, useClass: MockApiInterceptor, multi: true },
+    // { provide: "mockApiData", useValue: mockApi },
   ],
   bootstrap: [AppComponent],
 })

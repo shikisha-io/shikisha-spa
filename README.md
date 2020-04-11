@@ -5,7 +5,7 @@ The frontend single page application for the Shikisha app
 
 Run locally with:
 
-```npm run start:proxy:mock:server```
+```npm run start:mock```
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
 
