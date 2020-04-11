@@ -4,7 +4,7 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppComponent } from "./app.component";
-import { ProductsComponent } from "./products/products.component";
+import { ProductsComponent } from "./pages/products/products.component";
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -27,7 +27,6 @@ import {
 import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { TimeagoModule } from "ngx-timeago";
 
-import { ProductCardComponent } from "./product-card/product-card.component";
 import { UpdateProductComponent } from "./pages/update-product/update-product.component";
 import { ProductFormComponent } from "./product-form/product-form.component";
 import { LoaderComponent } from "./shared/loader/loader.component";
@@ -36,6 +35,7 @@ import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { ApiErrorInterceptor } from "./shared/interceptors/api-error.interceptor";
 import { NotificationsService } from "./shared/services/notifications.service";
 import { MockApiInterceptor } from "./shared/interceptors/mock-api.interceptor";
+import { ShikishaCardModule } from './modules/card/card.module';
 
 const urls = [
   {
@@ -56,7 +56,6 @@ const urls = [
     AppComponent,
     ProductsComponent,
     AddProductComponent,
-    ProductCardComponent,
     UpdateProductComponent,
     ProductFormComponent,
     LoaderComponent,
@@ -84,6 +83,7 @@ const urls = [
     MatSnackBarModule,
     MatProgressSpinnerModule,
     TimeagoModule.forRoot(),
+    ShikishaCardModule
   ],
   providers: [
     LoadingService,

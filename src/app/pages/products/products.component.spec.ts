@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductsComponent } from './products.component';
-import { ApiService } from '../shared/services/api.service';
+import { ApiService } from '../../shared/services/api.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { RouterTestingModule } from '@angular/router/testing';
 
