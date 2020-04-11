@@ -5,6 +5,7 @@
   "scripts": {
     "mock:server": "json-server --port 5000 --routes mock-api/routes.json --watch mock-api/db.json --no-cors=true",
     "start:proxy": "ng serve --proxy-config proxy.conf.json",
+    "start:mock": "ng serve --configuration=mock",
     "ng": "ng",
     "clean": "rimraf ./dist",
     "start": "ng serve",

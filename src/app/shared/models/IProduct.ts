@@ -7,4 +7,6 @@ export interface IProduct {
   id?: string;
   name: string;
   description: string;
+  insertedUtc?: string;
+  updatedUtc?: string;
 }
