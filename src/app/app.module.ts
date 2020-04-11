@@ -35,9 +35,7 @@ import { LoadingInterceptor } from "./shared/interceptors/loading.interceptor";
 import { ApiErrorInterceptor } from "./shared/interceptors/api-error.interceptor";
 import { NotificationsService } from "./shared/services/notifications.service";
 import { MockApiInterceptor } from "./shared/interceptors/mock-api.interceptor";
-// import { ShikishaCardModule } from './modules/card/card.module';
-
-import { ShikishaCardModule } from '@bit/shikisha.app.card';
+import { ShikishaCardModule } from './modules/card/card.module';
 
 const urls = [
   {
@@ -85,7 +83,6 @@ const urls = [
     MatSnackBarModule,
     MatProgressSpinnerModule,
     TimeagoModule.forRoot(),
-    // ShikishaCardModule
     ShikishaCardModule
   ],
   providers: [
